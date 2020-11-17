@@ -22,7 +22,7 @@ public class Main {
                     Terminal.cp(Parser.args.get(i).get(0), Parser.args.get(i).get(1));
                     break;
                 case "cat":
-                    commandsOutput = Terminal.cat(Parser.args.get(i));
+                    commandsOutput += Terminal.cat(Parser.args.get(i)) + "\n";
                     break;
                 case "mv":
                     Terminal.mv(Parser.args.get(i).get(0), Parser.args.get(i).get(1));
@@ -80,6 +80,8 @@ public class Main {
                     Terminal.writeToFile(commandsOutput, Parser.args.get(i).get(0));
                 if(Parser.args.get(i).size() == 2)
                     Terminal.writeToFile(commandsOutput, Parser.args.get(i).get(1));
+                if(Parser.args.get(i).size() > 2)
+                    Terminal.writeToFile(commandsOutput, Parser.args.get(i).get(Parser.args.get(i).size() - 1));
             }
             //Checks if there is a double redirect
             else if(Parser.is_redirect.get(i).equalsIgnoreCase(">>")){
@@ -87,6 +89,8 @@ public class Main {
                     Terminal.appendToFile(commandsOutput, Parser.args.get(i).get(0));
                 if(Parser.args.get(i).size() == 2)
                     Terminal.appendToFile(commandsOutput, Parser.args.get(i).get(1));
+                if(Parser.args.get(i).size() > 2)
+                    Terminal.appendToFile(commandsOutput, Parser.args.get(i).get(Parser.args.get(i).size() - 1));
             }
             else System.out.println(commandsOutput);
         }

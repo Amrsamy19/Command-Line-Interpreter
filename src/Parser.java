@@ -67,15 +67,15 @@ public class Parser {
                 if (is_redirect.get(j).equalsIgnoreCase(">")
                 || is_redirect.get(j).equalsIgnoreCase(">>")) {
                     if (((commandArguments == -1) &&
-                       (args.get(j).size() == 2 ||
-                        args.get(j).size() == 1)) ||
+                       (args.get(j).size() >= 2 ||
+                        args.get(j).size() == 1))||
                        (commandArguments + 1 == args.get(j).size()))
                         parameters_flag = true;
                     else parameters_flag = false;
                 }
                 else {
                     if (((commandArguments == -1)&&
-                       (args.get(j).size() == 1||
+                       (args.get(j).size() >= 1 ||
                         args.get(j).isEmpty()))||
                        (commandArguments == args.get(j).size()))
                         parameters_flag = true;
@@ -89,7 +89,7 @@ public class Parser {
                 commandName = cmd.get(j);
                 cmd.remove(j);
                 args.remove(j);
-                if (!cmd_flag) System.out.println("Error, couldn't reco");
+                if (!cmd_flag) System.out.println("Error, couldn't recognaized the command");
                 else if(!parameters_flag)
                 {
                     if(commandArguments == -1)

@@ -84,21 +84,42 @@ public class Terminal {
         try {
             File files;
             Scanner myReader = null;
-            for (int i = 0; i < Paths.size(); i++) {
-                filePath = new File(Main.currentDirectory, Paths.get(i));
-                if (filePath.isAbsolute()) {
-                    System.out.println("File Name: " + filePath.getName());
-                    files = new File(Main.currentDirectory, Paths.get(i));
-                    myReader = new Scanner(files);
-                    while (myReader.hasNextLine()) fileLines += myReader.nextLine() + "\n";
-                } else {
-                    System.out.println("File Name: " + Paths.get(i));
-                    files = new File(Main.currentDirectory, Paths.get(i));
-                    myReader = new Scanner(files);
-                    while (myReader.hasNextLine()) fileLines += myReader.nextLine() + "\n";
+            if(Parser.is_redirect.contains(">")||
+               Parser.is_redirect.contains(">>")){
+                for (int i = 0; i < Paths.size() - 1; i++) {
+                    filePath = new File(Main.currentDirectory, Paths.get(i));
+                    if (filePath.isAbsolute()) {
+                        files = new File(Main.currentDirectory, Paths.get(i));
+                        myReader = new Scanner(files);
+                        fileLines += "File Name: " + filePath.getName() + "\n";
+                        while (myReader.hasNextLine()) fileLines += myReader.nextLine() + "\n";
+                        myReader.close();
+                    } else {
+                        files = new File(Main.currentDirectory, Paths.get(i));
+                        myReader = new Scanner(files);
+                        fileLines += "File Name: " + filePath.getName() + "\n";
+                        while (myReader.hasNextLine()) fileLines += myReader.nextLine() + "\n";
+                        myReader.close();
+                    }
+                }
+            } else {
+                for (int i = 0; i < Paths.size(); i++) {
+                    filePath = new File(Main.currentDirectory, Paths.get(i));
+                    if (filePath.isAbsolute()) {
+                        files = new File(Main.currentDirectory, Paths.get(i));
+                        myReader = new Scanner(files);
+                        fileLines += "File Name: " + filePath.getName() + "\n";
+                        while (myReader.hasNextLine()) fileLines += myReader.nextLine() + "\n";
+                        myReader.close();
+                    } else {
+                        files = new File(Main.currentDirectory, Paths.get(i));
+                        myReader = new Scanner(files);
+                        fileLines += "File Name: " + filePath.getName() + "\n";
+                        while (myReader.hasNextLine()) fileLines += myReader.nextLine() + "\n";
+                        myReader.close();
+                    }
                 }
             }
-            myReader.close();
             return fileLines;
         } catch (Exception e) {
             return "File " + filePath.getName() + " Not Found!";
@@ -312,7 +333,7 @@ public class Terminal {
         File filePath= new File(Main.currentDirectory, fileName);
         if(filePath.exists()){
             FileWriter fileWriter= new FileWriter(filePath, true);
-            fileWriter.append("\n" + commandsOutput);
+            fileWriter.append("\n").append(commandsOutput);
             fileWriter.close();
         }
         else{
