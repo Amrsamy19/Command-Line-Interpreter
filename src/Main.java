@@ -13,7 +13,6 @@ public class Main {
                 case "cd":{
                     if(Parser.args.get(i).isEmpty()){
                         commandsOutput = Terminal.pwd();
-                        System.out.println(commandsOutput);
                     }
                     else
                         Terminal.cd(Parser.args.get(i).get(0));
@@ -24,25 +23,21 @@ public class Main {
                     break;
                 case "cat":
                     commandsOutput = Terminal.cat(Parser.args.get(i));
-                    System.out.println(commandsOutput);
                     break;
                 case "mv":
                     Terminal.mv(Parser.args.get(i).get(0), Parser.args.get(i).get(1));
                     break;
                 case "args":
                     commandsOutput = Terminal.args(Parser.args.get(i).get(0));
-                    System.out.println(commandsOutput);
                     break;
                 case "help":
                     commandsOutput = Terminal.help();
-                    System.out.println(commandsOutput);
                     break;
                 case "mkdir":
                     Terminal.mkdir(Parser.args.get(i).get(0));
                     break;
                 case "rmdir":
                     commandsOutput = Terminal.rmdir(Parser.args.get(i).get(0));
-                    System.out.println(commandsOutput);
                     break;
                 case "rm":
                     Terminal.rm(Parser.args.get(i).get(0));
@@ -52,35 +47,29 @@ public class Main {
                     break;
                 case "pwd":
                     commandsOutput = Terminal.pwd();
-                    System.out.println(commandsOutput);
                     break;
                 case "clear":
                     Terminal.clear();
                     break;
                 case "date":
                     commandsOutput = Terminal.date();
-                    System.out.println(commandsOutput);
                     break;
                 case "ls": {
                     if (Parser.args.get(i).size() == 0){
                         commandsOutput = Terminal.ls();
-                        System.out.println(commandsOutput);
                     }
 
                     else if (Parser.args.get(i).size() == 1){
                         if (Parser.args.get(i).get(0).contains(".txt")){
                             commandsOutput = Terminal.ls();
-                            System.out.println(commandsOutput);
                         }
                         else{
                             commandsOutput = Terminal.ls(Parser.args.get(i).get(0));
-                            System.out.println(commandsOutput);
                         }
                     }
                     else if (Parser.args.get(i).size() == 2)
                         if(Parser.args.get(i).get(1).contains(".txt")){
                             commandsOutput = Terminal.ls(Parser.args.get(i).get(0));
-                            System.out.println(commandsOutput);
                         }
                     break;
                 }
@@ -93,12 +82,13 @@ public class Main {
                     Terminal.writeToFile(commandsOutput, Parser.args.get(i).get(1));
             }
             //Checks if there is a double redirect
-            if(Parser.is_redirect.get(i).equalsIgnoreCase(">>")){
+            else if(Parser.is_redirect.get(i).equalsIgnoreCase(">>")){
                 if(Parser.args.get(i).size() == 1)
                     Terminal.appendToFile(commandsOutput, Parser.args.get(i).get(0));
                 if(Parser.args.get(i).size() == 2)
                     Terminal.appendToFile(commandsOutput, Parser.args.get(i).get(1));
             }
+            else System.out.println(commandsOutput);
         }
     }
 

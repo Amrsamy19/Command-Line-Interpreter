@@ -107,8 +107,13 @@ public class Terminal {
 
     //Moves a given file to specific path
     public static void mv(String sourcePath, String destinationPath) throws IOException {
-        File source = new File(Main.currentDirectory + "/" +sourcePath);
+        File source = new File(sourcePath);
         File destination = new File(destinationPath);
+
+        if(source.isAbsolute())
+            source = new File(sourcePath);
+        else
+            source = new File(Main.currentDirectory + "/" + sourcePath);
 
         FileChannel sourceChannel = new FileInputStream(source).getChannel();
         FileChannel destinationChannel = null;
@@ -198,8 +203,14 @@ public class Terminal {
 
     //Copies a given file to specific path
     public static void cp(String sourcePath, String destinationPath) {
-        File source = new File(Main.currentDirectory + "/"+ sourcePath);
+        File source = new File(sourcePath);
         File destination = new File(destinationPath);
+
+        if(source.isAbsolute())
+            source = new File(sourcePath);
+        else
+            source = new File(Main.currentDirectory + "/" + sourcePath);
+
         try {
             if(destination.isDirectory()){
                 Scanner sc = new Scanner(source);
@@ -285,13 +296,13 @@ public class Terminal {
     public static void writeToFile(String commandsOutput, String fileName) throws IOException {
         File filePath= new File(Main.currentDirectory, fileName);
         if(filePath.exists()){
-            FileWriter fileWriter= new FileWriter(filePath);
+            FileWriter fileWriter= new FileWriter(filePath, false);
             fileWriter.write("\n" + commandsOutput);
             fileWriter.close();
         }
         else{
-            FileWriter fileWriter= new FileWriter(filePath);
-            fileWriter.write("\n" + commandsOutput);
+            FileWriter fileWriter= new FileWriter(filePath, false);
+            fileWriter.write(commandsOutput);
             fileWriter.close();
         }
     }
@@ -306,7 +317,7 @@ public class Terminal {
         }
         else{
             FileWriter fileWriter= new FileWriter(filePath, true);
-            fileWriter.append("\n" + commandsOutput);
+            fileWriter.append(commandsOutput);
             fileWriter.close();
         }
     }

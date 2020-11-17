@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f750295a-9dc9-4d37-b08a-52fd4b89be4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OsAssignment/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OsAssignment/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OsAssignment/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OsAssignment/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OsAssignment/Terminal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OsAssignment/Terminal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Terminal.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +38,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -114,7 +114,8 @@
       <workItem from="1605519647282" duration="26817000" />
       <workItem from="1605575387679" duration="2266000" />
       <workItem from="1605577777381" duration="3801000" />
-      <workItem from="1605614190738" duration="6802000" />
+      <workItem from="1605614190738" duration="10955000" />
+      <workItem from="1605629059695" duration="2279000" />
     </task>
     <servers />
   </component>
@@ -126,10 +127,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>8</line>
+          <properties class="Main" method="commandsExecutor">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

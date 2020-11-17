@@ -1,0 +1,7 @@
+
+Directory: .git
+Directory: .idea
+File: OsAssignment.iml
+Directory: out
+Directory: src
+File: test.txt
