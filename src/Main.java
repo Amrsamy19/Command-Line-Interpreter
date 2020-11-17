@@ -5,6 +5,7 @@ public class Main {
     static String currentDirectory = System.getProperty("user.dir");
     static String userInput;
 
+    //Checks which command should be preformed
     public static void commandsExecutor() throws IOException {
         String commandsOutput = "";
         for(int i = 0; i < Parser.cmd.size(); i++) {
@@ -84,12 +85,14 @@ public class Main {
                     break;
                 }
             }
+            //Checks if there is a single redirect
             if(Parser.is_redirect.get(i).equalsIgnoreCase(">")){
                 if(Parser.args.get(i).size() == 1)
                     Terminal.writeToFile(commandsOutput, Parser.args.get(i).get(0));
                 if(Parser.args.get(i).size() == 2)
                     Terminal.writeToFile(commandsOutput, Parser.args.get(i).get(1));
             }
+            //Checks if there is a double redirect
             if(Parser.is_redirect.get(i).equalsIgnoreCase(">>")){
                 if(Parser.args.get(i).size() == 1)
                     Terminal.appendToFile(commandsOutput, Parser.args.get(i).get(0));
@@ -101,8 +104,6 @@ public class Main {
 
     public static void cliRunner() throws IOException {
         Scanner readingInput = new Scanner(System.in);
-        boolean hasPipe = false;
-        boolean hasRedirect = false;
         while(true){
             System.out.print(currentDirectory + ">");
             userInput = readingInput.nextLine();

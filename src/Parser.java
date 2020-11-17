@@ -7,6 +7,7 @@ public class Parser {
     static ArrayList<String> cmd= new ArrayList <>();
     static ArrayList<String> is_redirect = new ArrayList <>();
 
+    //Setting the commands and the number of their arguments in hash map
     public static HashMap setCommands(){
         HashMap <String, Integer> map = new HashMap<>();
         map.put("cd",-1);
@@ -29,6 +30,7 @@ public class Parser {
 
     }
 
+    //Setting the entered commands and their arguments into the array lists
     public static void setArgs(String input){
         String [] tempArgs;
         String [] tempCmds;
@@ -51,6 +53,7 @@ public class Parser {
 
     }
 
+    //Validating if the entered command is correct and its arguments
     public static boolean parse(String input){
         String commandName;
         boolean cmd_flag = false, parameters_flag = false, bigFlag = false;
@@ -86,7 +89,7 @@ public class Parser {
                 commandName = cmd.get(j);
                 cmd.remove(j);
                 args.remove(j);
-                if (!cmd_flag) System.out.println("Error the Command isn't Right.");
+                if (!cmd_flag) System.out.println("Error, couldn't reco");
                 else if(!parameters_flag)
                 {
                     if(commandArguments == -1)
@@ -101,14 +104,17 @@ public class Parser {
         else return false;
     }
 
+    //Returns the commands list
     public static ArrayList<String> getCmd(){
         return cmd;
     }
 
+    //Returns array contains redirect operator
     public static ArrayList<String> getRedirect(){
         return is_redirect;
     }
 
+    //Returns the Arguments list
     public static ArrayList <ArrayList<String>> getArguments() {
         return args;
     }

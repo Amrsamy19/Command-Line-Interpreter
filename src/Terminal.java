@@ -10,6 +10,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Terminal {
+    //Prints small description for each command
     public static String help() {
         return "cd: Changes current directory to another one."+
         "\nls: List all the directory contents."+
@@ -28,6 +29,7 @@ public class Terminal {
         "\nexit: Close the console.";
     }
 
+    //Prints arguments of the entered commands
     public static String args(String input) {
         try {//TODO Remove try-catch and make a default case for invalid input\
             String commandOutput = "";
@@ -70,10 +72,12 @@ public class Terminal {
         }
     }
 
+    //Prints current workingspace
     public static String pwd(){
         return Main.currentDirectory;
     }
 
+    //Prints the content of a given file
     public static String cat(ArrayList<String> Paths) {
         File filePath = null;
         String fileLines = "";
@@ -101,6 +105,7 @@ public class Terminal {
         }
     }
 
+    //Moves a given file to specific path
     public static void mv(String sourcePath, String destinationPath) throws IOException {
         File source = new File(Main.currentDirectory + "/" +sourcePath);
         File destination = new File(destinationPath);
@@ -119,6 +124,7 @@ public class Terminal {
         }
     }
 
+    //Prints some of content of a given file
     public static String more(String input) {
         Scanner myFileReader = null;
         Scanner myReader = new Scanner(System.in);
@@ -159,6 +165,7 @@ public class Terminal {
             }
     }
 
+    //Returns the size of a directory
     private static long fileCounter(File currentDirectory) {
         File[] files = currentDirectory.listFiles();
         long length = 0;
@@ -169,6 +176,7 @@ public class Terminal {
         return length;
     }
 
+    //Deletes given directory if it is empty
     public static String rmdir(String Path) {
         String commandOutput = "";
         File dirPath = new File(Main.currentDirectory + "/" + Path);
@@ -183,10 +191,12 @@ public class Terminal {
         return commandOutput;
     }
 
+    //Clears the screen
     public static void clear(){
         for (int i = 0; i < 150; i++) System.out.println();
     }
 
+    //Copies a given file to specific path
     public static void cp(String sourcePath, String destinationPath) {
         File source = new File(Main.currentDirectory + "/"+ sourcePath);
         File destination = new File(destinationPath);
@@ -216,6 +226,7 @@ public class Terminal {
         }
     }
 
+    //Deletes given file
     public static void rm(String Path) {
         File file= new File(Main.currentDirectory + "/" + Path);
 
@@ -235,6 +246,7 @@ public class Terminal {
         }
     }
 
+    //Makes an empty directory in a given path
     public static void mkdir(String Path) {
         File file= new File(Main.currentDirectory, Path);
         boolean bool = file.mkdir();
@@ -245,12 +257,14 @@ public class Terminal {
         }
     }
 
+    //Prints the local date and time
     public static String date() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("E, MMM dd yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
         return dtf.format(now);
     }
 
+    //Changes the current directory
     public static void cd(String input) {
         try{
             Path currentDirectory = Paths.get(Main.currentDirectory);
@@ -267,6 +281,7 @@ public class Terminal {
         }
     }
 
+    //Overwrites given data into a file
     public static void writeToFile(String commandsOutput, String fileName) throws IOException {
         File filePath= new File(Main.currentDirectory, fileName);
         if(filePath.exists()){
@@ -281,6 +296,7 @@ public class Terminal {
         }
     }
 
+    //Appends given data to a file
     public static void appendToFile(String commandsOutput, String fileName) throws IOException {
         File filePath= new File(Main.currentDirectory, fileName);
         if(filePath.exists()){
@@ -295,7 +311,8 @@ public class Terminal {
         }
     }
 
-    public static String ls() throws IOException {
+    //List all the content of the current directory
+    public static String ls() {
         String fileLines = "";
         try{
             File folder = new File(Main.currentDirectory);
@@ -313,7 +330,8 @@ public class Terminal {
         return fileLines;
     }
 
-    public static String ls(String listPathFiles){
+    //List all the content of the given directory
+    public static String ls(String listPathFiles) {
         String fileLines = "";
         try{
             File folder = new File(listPathFiles);
