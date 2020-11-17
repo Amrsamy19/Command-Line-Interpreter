@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f750295a-9dc9-4d37-b08a-52fd4b89be4a" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1k9dtpDhWN2V8E85UWMfDi8LoKO" />
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tito5\Downloads\OS Assignment" />
+      <recent name="C:\Users\tito5\Downloads\OS Assignment\testo" />
+      <recent name="C:\Users\tito5\Downloads\OS Assignment\test" />
+      <recent name="C:\Users\tito5\Downloads\OS Assignment\" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="OsAssignment" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="OsAssignment" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f750295a-9dc9-4d37-b08a-52fd4b89be4a" name="Default Changelist" comment="" />
+      <created>1605116958086</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605116958086</updated>
+      <workItem from="1605116971108" duration="1270000" />
+      <workItem from="1605124262365" duration="1889000" />
+      <workItem from="1605127088803" duration="753000" />
+      <workItem from="1605128433862" duration="704000" />
+      <workItem from="1605177920988" duration="3210000" />
+      <workItem from="1605185615719" duration="7004000" />
+      <workItem from="1605199593864" duration="2725000" />
+      <workItem from="1605212058890" duration="571000" />
+      <workItem from="1605213219477" duration="2638000" />
+      <workItem from="1605217386171" duration="175000" />
+      <workItem from="1605219757207" duration="4703000" />
+      <workItem from="1605272422874" duration="5292000" />
+      <workItem from="1605278738958" duration="6830000" />
+      <workItem from="1605299865964" duration="2581000" />
+      <workItem from="1605350733606" duration="2746000" />
+      <workItem from="1605383431650" duration="8045000" />
+      <workItem from="1605395008376" duration="1243000" />
+      <workItem from="1605439322666" duration="1056000" />
+      <workItem from="1605446334894" duration="4773000" />
+      <workItem from="1605459947281" duration="25467000" />
+      <workItem from="1605519647282" duration="26817000" />
+      <workItem from="1605575387679" duration="2266000" />
+      <workItem from="1605577777381" duration="3801000" />
+      <workItem from="1605614190738" duration="3947000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
