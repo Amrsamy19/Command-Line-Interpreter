@@ -3,12 +3,12 @@ import java.util.HashMap;
 
 public class Parser {
 
-    static ArrayList <ArrayList<String>> args= new ArrayList <>();
-    static ArrayList<String> cmd= new ArrayList <>();
+    static ArrayList <ArrayList<String>> args = new ArrayList <>();
+    static ArrayList<String> cmd = new ArrayList <>();
     static ArrayList<String> is_redirect = new ArrayList <>();
 
     //Setting the commands and the number of their arguments in hash map
-    public static HashMap setCommands(){
+    public static HashMap setCommands() {
         HashMap <String, Integer> map = new HashMap<>();
         map.put("cd",-1);
         map.put("ls",-1);
@@ -31,7 +31,7 @@ public class Parser {
     }
 
     //Setting the entered commands and their arguments into the array lists
-    public static void setArgs(String input){
+    public static void setArgs(String input) {
         String [] tempArgs;
         String [] tempCmds;
         tempCmds=input.split(" \\| ");
@@ -54,7 +54,7 @@ public class Parser {
     }
 
     //Validating if the entered command is correct and its arguments
-    public static boolean parse(String input){
+    public static boolean parse(String input) {
         String commandName;
         boolean cmd_flag = false, parameters_flag = false, bigFlag = false;
         int commandArguments = 0;
@@ -89,7 +89,7 @@ public class Parser {
                 commandName = cmd.get(j);
                 cmd.remove(j);
                 args.remove(j);
-                if (!cmd_flag) System.out.println("Error, couldn't recognaized the command");
+                if (!cmd_flag) System.out.println("Error, couldn't recognized the command");
                 else if(!parameters_flag)
                 {
                     if(commandArguments == -1)

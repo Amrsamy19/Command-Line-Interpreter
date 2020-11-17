@@ -72,7 +72,7 @@ public class Terminal {
         }
     }
 
-    //Prints current workingspace
+    //Prints current workspace
     public static String pwd(){
         return Main.currentDirectory;
     }

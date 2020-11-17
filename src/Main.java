@@ -1,6 +1,16 @@
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Team Members:
+ *  Amr Samy - ID: 20180187
+ *  Amr Ayman - ID: 20180374
+ *  Rawan Magdy - ID: 20180107
+ *  Yousef Muhammed - ID: 20180352
+ * 
+ * Github repo's link -> https://github.com/Amrsamy19/Command-Line-Interpreter
+ */
+
 public class Main {
     static String currentDirectory = System.getProperty("user.dir");
     static String userInput;
@@ -55,27 +65,25 @@ public class Main {
                     commandsOutput = Terminal.date();
                     break;
                 case "ls": {
-                    if (Parser.args.get(i).size() == 0){
+                    if (Parser.args.get(i).size() == 0)
                         commandsOutput = Terminal.ls();
-                    }
 
                     else if (Parser.args.get(i).size() == 1){
-                        if (Parser.args.get(i).get(0).contains(".txt")){
+                        if (Parser.args.get(i).get(0).contains(".txt"))
                             commandsOutput = Terminal.ls();
-                        }
-                        else{
+                        else
                             commandsOutput = Terminal.ls(Parser.args.get(i).get(0));
-                        }
                     }
                     else if (Parser.args.get(i).size() == 2)
-                        if(Parser.args.get(i).get(1).contains(".txt")){
+                        if(Parser.args.get(i).get(1).contains(".txt"))
                             commandsOutput = Terminal.ls(Parser.args.get(i).get(0));
-                        }
                     break;
                 }
             }
             //Checks if there is a single redirect
             if(Parser.is_redirect.get(i).equalsIgnoreCase(">")){
+                if(Parser.args.get(i).isEmpty())
+                    System.out.println("Error, you must write the file name");
                 if(Parser.args.get(i).size() == 1)
                     Terminal.writeToFile(commandsOutput, Parser.args.get(i).get(0));
                 if(Parser.args.get(i).size() == 2)
@@ -85,6 +93,8 @@ public class Main {
             }
             //Checks if there is a double redirect
             else if(Parser.is_redirect.get(i).equalsIgnoreCase(">>")){
+                if(Parser.args.get(i).isEmpty())
+                    System.out.println("Error, you must write the file name");
                 if(Parser.args.get(i).size() == 1)
                     Terminal.appendToFile(commandsOutput, Parser.args.get(i).get(0));
                 if(Parser.args.get(i).size() == 2)
